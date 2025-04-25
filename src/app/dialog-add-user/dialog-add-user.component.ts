@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FirestoreService } from '../services/firestore.service';
 import { FormsModule } from '@angular/forms';
-import { MatDialogModule, MatDialogActions, MatDialogContent } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogActions, MatDialogContent, MatDialogRef } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -24,7 +24,7 @@ export class DialogAddUserComponent {
   birthDate: Date = new Date();
   loading = false;
 
-  constructor(private firestoreService: FirestoreService) { }
+  constructor(public dialogRef: MatDialogRef<DialogAddUserComponent>, private firestoreService: FirestoreService) { }
 
   // saveUser() {
   //   this.user.birthDate = this.birthDate.getTime();
@@ -49,6 +49,7 @@ export class DialogAddUserComponent {
       .then(() => {
         console.log('User erfolgreich hinzugefügt!');
         this.loading = false; // Progressbar wieder ausblenden
+        this.dialogRef.close();
       })
       .catch(error => {
         console.error('Fehler beim Hinzufügen des Users:', error);
