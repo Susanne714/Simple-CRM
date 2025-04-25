@@ -3,3 +3,16 @@
     right: 56px;
     bottom: 56px;
 }
+
+table {
+    width: 100%;
+
+    >tr {
+        >th {
+            color: #9f97a3;
+            font-weight: 500;
+            text-align: start;
+        }
+
+    }
+}
