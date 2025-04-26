@@ -10,14 +10,14 @@ export class User {
         this.firstName = obj ? obj.firstName : '';
         this.lastName = obj ? obj.lastName : '';
         this.birthDate = obj ? obj.birthDate : 0;
-        this.address = obj ? obj.street : '';
+        this.address = obj ? obj.address : '';
         this.postCode = obj ? obj.postCode : 0;
         this.city = obj ? obj.city : '';
     }
 
     toPlainObject() {
         return {
-            fistName: this.firstName,
+            firstName: this.firstName,
             lastName: this.lastName,
             birthDate: this.birthDate,
             address: this.address,
