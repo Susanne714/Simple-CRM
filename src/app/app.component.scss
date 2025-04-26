@@ -16,6 +16,10 @@
     min-height: 56px;
     display: flex;
     align-items: center;
+
+    >.logo-img {
+        height: 56px;
+    }
 }
 
 mat-toolbar,
