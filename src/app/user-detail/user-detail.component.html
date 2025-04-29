@@ -1,8 +1,13 @@
-<p>user-detail works!</p>
-
 <div *ngIf="userData">
     <mat-card>
         <mat-card-content class="user-detail-header">
+            <button mat-icon-button class="menu-upper-right-corner" [matMenuTriggerFor]="userMenu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #userMenu="matMenu">
+                <button mat-menu-item (click)="editUserDetail()">Edit</button>
+              </mat-menu>
+
             <img src="../../assets/img/avatar.png" alt="">
             <div class="user-details">
                 <h2>{{userData.firstName}} {{userData.lastName}}</h2>
@@ -12,6 +17,14 @@
     </mat-card>
     
     <mat-card class="mt-32">
+        <button mat-icon-button class="menu-upper-right-corner" [matMenuTriggerFor]="addressMenu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #addressMenu="matMenu">
+            <button mat-menu-item (click)="editMenu()">Edit</button>
+          </mat-menu>
+
         <mat-card-header>
             <mat-card-title>Address</mat-card-title>
         </mat-card-header>
@@ -22,3 +35,5 @@
         </mat-card-content>
     </mat-card>
 </div>
+
+
